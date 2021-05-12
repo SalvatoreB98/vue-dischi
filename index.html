@@ -18,11 +18,18 @@
         <div class="my-container">
             <div class="header">
                 <h1> My albums </h1>
-                <select name="" @change="onChange()" v-model="selected">
-                    <option disabled value="">Filtra per genere</option>
-                    <option value="all"> Tutti gli album </option>
-                    <option v-for="element in genres" :value="element"> {{element}} </option>
-                </select>
+                <div>
+                    <select name="ordina "class="btn" v-model='order'> 
+                        <option disabled value="">Ordina per</option>
+                        <option value="all"> Anno </option>
+                    </select>
+                    <select name="filtra" @change="onChange()" v-model="selected">
+                        <option disabled value="">Filtra per genere</option>
+                        <option value="all"> Tutti gli album </option>
+                        <option v-for="element in genres" :value="element"> {{element}} </option>
+                    </select>
+                </div>
+
             </div>
             <div class="albums-container">
                 <div v-for="(album,index) in filteredAlbums" class="album">

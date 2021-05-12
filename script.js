@@ -5,7 +5,8 @@ window.addEventListener("load", () => {
             albums: [],
             genres: [],
             selected : '',
-            filteredAlbums : []
+            filteredAlbums : [],
+            order: '' ,
         },
         methods: {
             onChange(){

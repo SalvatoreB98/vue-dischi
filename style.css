@@ -64,7 +64,15 @@ h1{
     font-size: 20px;
 }
 /* UTILITIES */
-
+.btn{
+    
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.inline-block{
+    display: inline-block;
+}
 /* REPSONSIVENESS */
 @media screen and (min-width:701px){
     .album{
