@@ -15,7 +15,7 @@ main{
     padding: 50px;
 }
 select{
-    font-size: 25px;
+    font-size: 17px;
     padding: 5px;
     cursor: pointer;
     border: none
@@ -23,38 +23,41 @@ select{
 /* CLASSES */
 .my-container{
     width: 100%;
+    height: calc(100vh - 150px);
     min-height: 400px;
-    margin: auto;
+    margin-top: 50px;
+    overflow-y: scroll;
     padding : 50px;
     box-shadow: 0px 0px 25px #00000048;
-    border-radius: 25px;
+    border-radius: 5px;
     background-color: white;
 }
 h1{
     font-weight: 600;
+    font-size: 1.5rem;
 }
-.header{
+header{
+    position: fixed;
+    top:0%;
+    left:0;
+    background-color: white;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-bottom: 25px;
-    margin-bottom: 25px;
-}
-.cover-container{
-
+    padding: 25px;
+    box-shadow: 0 4px 10px -2px gray;
 }
 .cover-container img{
     box-shadow: 0px 0px 20px #50505096;
     border-radius: 5px;
     width: 100%;
-    min-height: 280px;
     object-fit: cover;
 
 }
 .album{
     cursor: pointer;
     padding: 25px;
-    width: calc(100%);
     text-align: center;
 
 }
@@ -98,7 +101,6 @@ h1{
 @media screen and (min-width:701px){
     .album{
         width: calc(100% / 2);
-    
     }
 }
 @media screen and (min-width:900px){
@@ -107,15 +109,21 @@ h1{
     
     }
 }
-@media screen and (min-width:1200px){
+@media screen and (min-width:1100px){
     .album{
         width: calc(100% / 3);
     
     }
 }
-@media screen and (min-width:1400px){
+@media screen and (min-width:1300px){
     .album{
         width: calc(100% / 5);
+    
+    }
+}
+@media screen and (min-width:1500px){
+    .album{
+        width: calc(100% / 6);
     
     }
 }
