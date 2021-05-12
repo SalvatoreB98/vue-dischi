@@ -1,0 +1,20 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+main{
+    padding: 50px;
+}
+.my-container{
+    width: 100%;
+    min-height: 400px;
+}
+h1{
+    font-weight: 600;
+}
+.cover-container img{
+    width: 100%;
+    box-shadow: 0px 0px 20px #50505096;
+    border-radius: 5px;
+}
