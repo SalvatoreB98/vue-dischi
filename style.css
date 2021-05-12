@@ -3,20 +3,84 @@
     margin: 0;
     box-sizing: border-box;
 }
+/* TAGS */
+html{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.5rem;
+}
 main{
     padding: 50px;
 }
+select{
+    font-size: 25px;
+    padding: 5px;
+}
+/* CLASSES */
 .my-container{
     width: 100%;
     min-height: 400px;
-    max-width: 900px;
+    max-width: 1200px;
     margin: auto;
 }
 h1{
     font-weight: 600;
 }
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.cover-container{
+}
 .cover-container img{
-    width: 100%;
     box-shadow: 0px 0px 20px #50505096;
     border-radius: 5px;
+    width: 100%;
+    min-height: 280px;
+    object-fit: cover;
+
+}
+.album{
+    padding: 10px;
+    width: calc(100%);
+    text-align: center;
+
+}
+.albums-container{
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+    padding: 25px 0px;
+}
+.specs{
+    margin: 10px 0 25px 0px;
+}
+.artist{
+    
+}
+.year{
+    color: gray;
+    font-weight: 100;
+    font-size: 20px;
+}
+/* UTILITIES */
+
+/* REPSONSIVENESS */
+@media screen and (min-width:701px){
+    .album{
+        width: calc(100% / 2);
+    
+    }
+}
+@media screen and (min-width:900px){
+    .album{
+        width: calc(100% / 3);
+    
+    }
+}
+@media screen and (min-width:1000px){
+    .album{
+        width: calc(100% / 4);
+    
+    }
 }
