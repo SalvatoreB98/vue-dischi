@@ -20,12 +20,12 @@
         <div class="my-container">
             <h1> My albums </h1>
             <div class="album-container">
-                <div class="album col-xs-6 col-sm-4 col-lg-3">
+                <div v-for="(album,index) in albums" class="album col-xs-6 col-sm-4 col-lg-3">
                     <div class="cover-container">
-                        <img src="https://www.onstageweb.com/wp-content/uploads/2018/09/bon-jovi-new-jersey.jpg" alt="">
+                        <img :src="album.poster" alt="">
                     </div>
                     <div class="title">
-                        Titolo
+                        {{album.title}}
                     </div>
                     <div class="artist">
                         Bon  Jovi

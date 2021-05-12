@@ -1,12 +1,17 @@
-const app = new Vue({
-    el:'#vueContainer',
-    data:{
+window.addEventListener("load", () => {
+    const app = new Vue({
+        el: '#vueContainer',
+        data: {
+            albums: [],
+        },
+        methods: {
 
-    },
-    methods:{
-
-    },
-    mounted(){
-        
-    }
+        },
+        mounted() {
+            axios.get('https://flynn.boolean.careers/exercises/api/array/music')
+                .then((resp) => {
+                    this.albums = resp.data.response;
+                })
+        }
+    })
 })
