@@ -7,28 +7,24 @@
 html{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1.5rem;
-    background-color: rgb(32, 32, 39);
-    color: white;
 }
 main{
     padding: 50px;
 }
 select{
-    color: white;
-    background-color: teal;
     font-size: 25px;
     padding: 5px;
     cursor: pointer;
-    border: 0.5px solid rgba(128, 128, 128, 0.322);
+    border: none
 }
 /* CLASSES */
 .my-container{
     width: 100%;
     min-height: 400px;
-    max-width: 1200px;
     margin: auto;
     padding : 50px;
-    box-shadow: 0px 0px 25px #000000b6;
+    box-shadow: 0px 0px 25px #00000048;
+    border-radius: 25px;
 }
 h1{
     font-weight: 600;
@@ -39,7 +35,6 @@ h1{
     justify-content: space-between;
     padding-bottom: 25px;
     margin-bottom: 25px;
-    border-bottom: 0.5px solid gray;
 }
 .cover-container img{
     box-shadow: 0px 0px 20px #50505096;
@@ -50,6 +45,7 @@ h1{
 
 }
 .album{
+    cursor: pointer;
     padding: 10px;
     width: calc(100%);
     text-align: center;
@@ -65,7 +61,7 @@ h1{
     margin: 10px 0 25px 0px;
 }
 .artist{
-    
+    color: gray;
 }
 .year{
     color: gray;
@@ -83,6 +79,20 @@ h1{
     
     }
 }
+@media screen and (max-width:900px) {
+    main{
+        padding: 5px
+    }
+    h1{
+        width: 100%;
+    }
+    .header{
+        display: block;
+    }
+    .select{
+        width: 75%;
+    }  
+}
 @media screen and (min-width:900px){
     .album{
         width: calc(100% / 3);
@@ -92,6 +102,18 @@ h1{
 @media screen and (min-width:1000px){
     .album{
         width: calc(100% / 4);
+    
+    }
+}
+@media screen and (min-width:1200px){
+    .album{
+        width: calc(100% / 5);
+    
+    }
+}
+@media screen and (min-width:1400px){
+    .album{
+        width: calc(100% / 6);
     
     }
 }

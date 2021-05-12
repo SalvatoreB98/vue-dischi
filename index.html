@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <script src="script.js"></script>
@@ -17,14 +18,14 @@
     <main id="vueContainer">
         <div class="my-container">
             <div class="header">
-                <h1> My albums </h1>
+                <h1> <i class="fa fa-music" aria-hidden="true"></i> My albums </h1>
                 <div>
-                    <select  @change="onChangeSort()" name="ordina" v-model='selectedOrder'>
+                    <select @change="onChangeSort()" name="ordina" v-model='selectedOrder'>
                         <option disabled value="">Ordina per</option>
-                        <option value="random"> Casuale</option>
+                        <option value="random"> Casuale / Reset</option>
                         <option value="yearInc"> Dal più recente </option>
                         <option value="yearDec"> Dal meno recente </option>
-                        
+
                     </select>
                     <select @change="onChange()" name="filtra" v-model="selected">
                         <option disabled value="">Filtra per genere</option>
