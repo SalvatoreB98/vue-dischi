@@ -6,7 +6,10 @@
 /* TAGS */
 html{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1.5rem;
+    font-size: 1rem;
+}
+body{
+    background-color: #dddddd;
 }
 main{
     padding: 50px;
@@ -25,6 +28,7 @@ select{
     padding : 50px;
     box-shadow: 0px 0px 25px #00000048;
     border-radius: 25px;
+    background-color: white;
 }
 h1{
     font-weight: 600;
@@ -36,6 +40,9 @@ h1{
     padding-bottom: 25px;
     margin-bottom: 25px;
 }
+.cover-container{
+
+}
 .cover-container img{
     box-shadow: 0px 0px 20px #50505096;
     border-radius: 5px;
@@ -46,7 +53,7 @@ h1{
 }
 .album{
     cursor: pointer;
-    padding: 10px;
+    padding: 25px;
     width: calc(100%);
     text-align: center;
 
@@ -73,12 +80,7 @@ h1{
     display: inline-block;
 }
 /* REPSONSIVENESS */
-@media screen and (min-width:701px){
-    .album{
-        width: calc(100% / 2);
-    
-    }
-}
+
 @media screen and (max-width:900px) {
     main{
         padding: 5px
@@ -93,27 +95,27 @@ h1{
         width: 75%;
     }  
 }
+@media screen and (min-width:701px){
+    .album{
+        width: calc(100% / 2);
+    
+    }
+}
 @media screen and (min-width:900px){
     .album{
         width: calc(100% / 3);
     
     }
 }
-@media screen and (min-width:1000px){
-    .album{
-        width: calc(100% / 4);
-    
-    }
-}
 @media screen and (min-width:1200px){
     .album{
-        width: calc(100% / 5);
+        width: calc(100% / 3);
     
     }
 }
 @media screen and (min-width:1400px){
     .album{
-        width: calc(100% / 6);
+        width: calc(100% / 5);
     
     }
 }
