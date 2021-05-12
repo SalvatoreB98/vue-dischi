@@ -19,11 +19,14 @@
             <div class="header">
                 <h1> My albums </h1>
                 <div>
-                    <select name="ordina "class="btn" v-model='order'> 
+                    <select  @change="onChangeSort()" name="ordina" v-model='selectedOrder'>
                         <option disabled value="">Ordina per</option>
-                        <option value="all"> Anno </option>
+                        <option value="random"> Casuale</option>
+                        <option value="yearInc"> Dal più recente </option>
+                        <option value="yearDec"> Dal meno recente </option>
+                        
                     </select>
-                    <select name="filtra" @change="onChange()" v-model="selected">
+                    <select @change="onChange()" name="filtra" v-model="selected">
                         <option disabled value="">Filtra per genere</option>
                         <option value="all"> Tutti gli album </option>
                         <option v-for="element in genres" :value="element"> {{element}} </option>
