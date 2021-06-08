@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png" />
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <script src="script.js"></script>
-    <title> Music </title>
+    <title> Vue Dischi </title>
 </head>
 
 <body>
@@ -31,12 +32,18 @@
                         <option v-for="element in genres" :value="element"> {{element}} </option>
                     </select>
                 </div>
+                <p>Posiziona il mouse sull'album per ascoltare l'anteprima</p>
             </div>
             <div class="albums-container">
-                <div v-for="(album,index) in filteredAlbums" class="album" @mouseover="mouseover(index)" @mouseleave="mouseleave(index)">
+                <div v-for="(album,index) in filteredAlbums" class="album" @mouseover="mouseover(index); barAnimation(); "
+                    @mouseleave="mouseleave(index) ">
                     <audio :src="'mp3/' + album.mp3" :id="index"></audio>
                     <div class="cover-container">
                         <img :src="album.poster" alt="">
+                        <div v-if="activeAlbum==index" class="spectrum">
+                            <span v-for="(item,index) in spectrumBars" class="spectrum-bar" :class="{'active' : item.isActive}"></span>
+                        </div>
+
                     </div>
                     <div class="specs">
                         <div class="title">

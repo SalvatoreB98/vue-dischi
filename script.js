@@ -19,7 +19,21 @@ window.addEventListener("load", () => {
             selected: '',
             filteredAlbums: [],
             selectedOrder: '',
-            activeAlbum: '',
+            activeAlbum: null,
+            spectrumBars: [
+                {
+                    isActive: false,
+                },
+                {
+                    isActive: false,
+                },
+                {
+                    isActive: false,
+                },
+                {
+                    isActive: false,
+                },
+            ]
         },
         methods: {
             onChange() {
@@ -55,9 +69,20 @@ window.addEventListener("load", () => {
             },
             mouseleave(index) {
                 console.log("stop")
-                this.activeAlbum = index;
+                this.activeAlbum = null;
                 document.getElementById(index).pause();
                 document.getElementById(index).currentTime = 0;
+            },
+            barAnimation(index) {
+                this.spectrumBars.forEach((element,index)=>{
+                    setInterval(() => {
+                        element.isActive = true;
+                        setTimeout(()=>{
+                            element.isActive = false;
+                        },100)
+                    }, index * 100);   
+                })
+
             }
         },
         mounted() {
@@ -65,7 +90,7 @@ window.addEventListener("load", () => {
                 .then((resp) => {
                     this.albums = [...resp.data.response];
                     this.filteredAlbums = resp.data.response
-                    this.filteredAlbums.forEach((element,index) => {
+                    this.filteredAlbums.forEach((element, index) => {
                         element.mp3 = this.mp3[index];
                     });
                     console.log(this.filteredAlbums);
