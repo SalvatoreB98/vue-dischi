@@ -2,11 +2,24 @@ window.addEventListener("load", () => {
     const app = new Vue({
         el: '#vueContainer',
         data: {
+            mp3: [
+                "Bon Jovi  Born To Be My Baby.mp3",
+                'Queen  Under pressure Live at Wembley.mp3',
+                'Sting  Love Is Stronger Than Justice Magnificent SevenCD Ten Summoners Tales.mp3',
+                "Auckland by Numbers.mp3",
+                'Iron Maiden  Brave New World.mp3',
+                'Tears in Heaven Live at Staples Center Los Angeles CA 818  192001.mp3',
+                'Deep Purple  Made In Japan  Live 1972.mp3',
+                "And Justice For All.mp3",
+                'HardWired.mp3',
+                'Michael Jackson  Bad Shortened Version.mp3',
+            ],
             albums: [],
             genres: [],
             selected: '',
             filteredAlbums: [],
             selectedOrder: '',
+            activeAlbum: '',
         },
         methods: {
             onChange() {
@@ -34,6 +47,17 @@ window.addEventListener("load", () => {
                         this.filteredAlbums = [...this.albums];
                         break;
                 }
+            },
+            mouseover(index) {
+                console.log("play!")
+                this.activeAlbum = index;
+                document.getElementById(index).play();
+            },
+            mouseleave(index) {
+                console.log("stop")
+                this.activeAlbum = index;
+                document.getElementById(index).pause();
+                document.getElementById(index).currentTime = 0;
             }
         },
         mounted() {
@@ -41,7 +65,10 @@ window.addEventListener("load", () => {
                 .then((resp) => {
                     this.albums = [...resp.data.response];
                     this.filteredAlbums = resp.data.response
-
+                    this.filteredAlbums.forEach((element,index) => {
+                        element.mp3 = this.mp3[index];
+                    });
+                    console.log(this.filteredAlbums);
                     this.albums.forEach(element => {
                         if (!this.genres.includes(element.genre)) {
                             this.genres.push(element.genre);

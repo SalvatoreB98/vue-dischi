@@ -56,7 +56,7 @@ h1{
     padding: 25px;
     text-align: center;
     transform: perspective(250px) rotateY(0deg);
-    transition: transform 1s ease-in-out;
+    transition: transform 0.1s ease-in-out;
 }
 .albums-container{
     display: flex;
@@ -126,22 +126,6 @@ h1{
     }
 }
 /* ANIMATIONS */
-@keyframes card-rotation {
-    0% {
-        transform: perspective(250px) rotateY(0deg);
-    }
-    25%{
-        transform: perspective(250px) rotateY(5deg);
-    }
-    50%{
-        transform: perspective(250px) rotateY(0deg);
-    }
-    75% {
-        transform: perspective(250px) rotateY(-5deg);
-    }
-  }
-  
-  .album:hover {
-     animation: card-rotation 1s infinite;
-     animation-timing-function: ease-in;
-  }
+.album:hover{
+    transform: scale(1.1);
+}

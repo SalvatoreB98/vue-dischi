@@ -24,7 +24,6 @@
                         <option value="random"> Casuale / Reset</option>
                         <option value="yearInc"> Dal più recente </option>
                         <option value="yearDec"> Dal meno recente </option>
-
                     </select>
                     <select @change="onChange()" name="filtra" v-model="selected">
                         <option disabled value="">Filtra per genere</option>
@@ -34,7 +33,8 @@
                 </div>
             </div>
             <div class="albums-container">
-                <div v-for="(album,index) in filteredAlbums" class="album">
+                <div v-for="(album,index) in filteredAlbums" class="album" @mouseover="mouseover(index)" @mouseleave="mouseleave(index)">
+                    <audio :src="'mp3/' + album.mp3" :id="index"></audio>
                     <div class="cover-container">
                         <img :src="album.poster" alt="">
                     </div>
