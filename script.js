@@ -71,16 +71,20 @@ window.addEventListener("load", () => {
                 console.log("stop")
                 this.activeAlbum = null;
                 document.getElementById(index).pause();
-                document.getElementById(index).currentTime = 0;
+                document.getElementById(index).currentTime = 2;
             },
             barAnimation(index) {
-                this.spectrumBars.forEach((element,index)=>{
-                    setInterval(() => {
-                        element.isActive = true;
-                        setTimeout(()=>{
-                            element.isActive = false;
-                        },100)
-                    }, index * 100);   
+                this.spectrumBars.forEach((element, index) => {
+                    setTimeout(() => {
+                        setInterval(() => {
+                            element.isActive = true;
+                        }, 500);
+                        setTimeout(() => {
+                            setInterval(() => {
+                                element.isActive = false;
+                            }, 500);   
+                        }, 250);
+                    }, index*100);
                 })
 
             }
