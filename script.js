@@ -76,15 +76,15 @@ window.addEventListener("load", () => {
             barAnimation(index) {
                 this.spectrumBars.forEach((element, index) => {
                     setTimeout(() => {
-                        setInterval(() => {
+                        const up = setInterval(() => {
                             element.isActive = true;
                         }, 500);
                         setTimeout(() => {
-                            setInterval(() => {
+                            const down = setInterval(() => {
                                 element.isActive = false;
-                            }, 500);   
+                            }, 500);
                         }, 250);
-                    }, index*100);
+                    }, index * 100);
                 })
 
             }
